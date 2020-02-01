@@ -58,7 +58,7 @@ public class Turret : MonoBehaviour
         }
         if (shooter != null && b)
         {
-            shooter.Shoot((Vector2)transform.position);
+            shooter.Shoot((Vector2)target.transform.position - (Vector2)transform.position);
         }
     }
 }
