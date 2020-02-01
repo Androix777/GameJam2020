@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,28 @@ public class Life : MonoBehaviour
     [SerializeField]
     bool immortal = false;
 
+    [SerializeField] 
+    public int [] upgradePoints;
+
+    [SerializeField] 
+    public int [] upgradeResetPoints;
+    public int level = 0;
+    public bool upgradable = false;
+
     void Start()
     {
-
+        if (upgradable)
+        {
+            for (int i = upgradePoints.Length-1; i >= 0; i--)
+            {
+                if (HP >= upgradePoints[i])
+                {
+                    level = i + 1;
+                    
+                    break;
+                }
+            }
+        }
     }
 
     void Update()
@@ -41,7 +61,17 @@ public class Life : MonoBehaviour
             
         }
 
-    }
+        while (upgradable && level > 0 && HP < upgradeResetPoints[level-1])
+        {
+            level--;
 
+        }
+
+        while (upgradable && level < upgradePoints.Length && HP > upgradePoints[level])
+        {
+            level++;
+
+        }
+    }
 
 }

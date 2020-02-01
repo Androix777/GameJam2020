@@ -104,6 +104,10 @@ MonoBehaviour:
   status: 0
   dead: 0
   immortal: 1
+  upgradePoints: 
+  upgradeResetPoints: 
+  level: 0
+  upgradable: 1
 --- !u!114 &6461278909596159463
 MonoBehaviour:
   m_ObjectHideFlags: 0
