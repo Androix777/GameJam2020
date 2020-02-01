@@ -20,6 +20,7 @@ public class Hero : MonoBehaviour
     float coolDown = 0;
 
     float timer = 0;
+
     //float 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,6 @@ public class Hero : MonoBehaviour
     void Update()
     {
         OnMouseDown();
-
         switch (action)
         {
             case Action.Move:
@@ -51,9 +51,9 @@ public class Hero : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(ray,out hit,100))
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,100);
+            Debug.Log(hit.collider.gameObject.name);
+            if (hit)
             {
                 Life filter = hit.collider.GetComponent<Life>();
                 if (filter)
@@ -63,6 +63,7 @@ public class Hero : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log(hit.collider.gameObject.name);
                     action = Action.Move;
                     Position = hit.point;
                 }
@@ -76,9 +77,11 @@ public class Hero : MonoBehaviour
 
     Action ChooseAction(Life life)
     {
+        Debug.Log(life.status);
         if (life.status == Status.Ally)
         {
             lifeTarget = life;
+            target = life.gameObject;
             return Action.Heal;
         }
         return Action.Move;
@@ -92,7 +95,11 @@ public class Hero : MonoBehaviour
         }
         else
         {
-            action = Action.Stay;
+            if (action == Action.Move)
+            {
+                action = Action.Stay;
+            }
+            
         }
         
     }
@@ -109,6 +116,11 @@ public class Hero : MonoBehaviour
             if (Vector2.Distance(gameObject.transform.position, target.transform.position) <= range)
             {
                 Stay();
+                if (lifeTarget != null && timer <= 0)
+                {
+                    lifeTarget.DealDamage(-heal);
+                    timer = coolDown;
+                }
             }
             else
             {
@@ -119,11 +131,7 @@ public class Hero : MonoBehaviour
         }
         else
         {
-            if (lifeTarget != null && timer <= 0)
-            {
-                lifeTarget.DealDamage(heal);
-                timer = coolDown;
-            }
+            
         }
 
     }
