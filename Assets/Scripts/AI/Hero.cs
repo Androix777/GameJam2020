@@ -6,17 +6,20 @@ public class Hero : MonoBehaviour
 {
 
     enum Action { Move, Heal, Stay}
-    [SerializeField]
     Vector2 Position = new Vector2();
-    [SerializeField]
     GameObject target;
-    [SerializeField]
+    Life lifeTarget;
     Action action;
-    [SerializeField]
     Move move;
 
     [SerializeField]
     float range = 0;
+    [SerializeField]
+    int heal = 0;
+    [SerializeField]
+    float coolDown = 0;
+
+    float timer = 0;
     //float 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,7 @@ public class Hero : MonoBehaviour
                 Stay();
                 break;
         }
+        timer = timer > 0 ? timer-Time.deltaTime : 0;
     }
 
     private void OnMouseDown()
@@ -49,13 +53,13 @@ public class Hero : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(ray,out hit,10))
+            if (Physics.Raycast(ray,out hit,100))
             {
                 Life filter = hit.collider.GetComponent<Life>();
                 if (filter)
                 {
                     Debug.Log(filter.gameObject.name);
-                    action = ChooseAction();
+                    action = ChooseAction(filter);
                 }
                 else
                 {
@@ -63,19 +67,25 @@ public class Hero : MonoBehaviour
                     Position = hit.point;
                 }
             }
-            else action = Action.Stay;
-
+            else
+            {
+                action = Action.Stay;
+            }
         }
     }
 
-    Action ChooseAction()
+    Action ChooseAction(Life life)
     {
+        if (life.status == Status.Ally)
+        {
+            lifeTarget = life;
+            return Action.Heal;
+        }
         return Action.Move;
     }
 
     private void MoveToPoint()
     {
-        Debug.Log("M");
         if (Vector2.Distance((Vector2)transform.position,Position) > 0.1f)
         {
             move.SetMove(Position - (Vector2)transform.position);
@@ -89,13 +99,11 @@ public class Hero : MonoBehaviour
 
     private void Stay()
     {
-        Debug.Log("S");
         move.SetMove(Vector2.zero);
     }
 
     private void Heal()
     {
-        Debug.Log("H");
         if (target != null)
         {
             if (Vector2.Distance(gameObject.transform.position, target.transform.position) <= range)
@@ -111,7 +119,11 @@ public class Hero : MonoBehaviour
         }
         else
         {
-
+            if (lifeTarget != null && timer <= 0)
+            {
+                lifeTarget.DealDamage(heal);
+                timer = coolDown;
+            }
         }
 
     }

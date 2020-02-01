@@ -24,8 +24,12 @@ public class Life : MonoBehaviour
         HP -= damage;
         if (HP <= 0 && !dead)
         {
-            Functions.DestroyWithDeathEffects(gameObject, deathCause : DeathCause.Kill);
+            Functions.DestroyWithDeathEffects(gameObject, deathCause: DeathCause.Kill);
             dead = true;
         }
+        else HP = HP > maxHP ? maxHP : HP;
+
     }
+
+
 }

@@ -26,6 +26,5 @@ public class Move : MonoBehaviour
     {
         
         rb2d.velocity = vector.normalized * speed;
-        Debug.Log(rb2d.velocity);
     }
 }
