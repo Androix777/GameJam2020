@@ -54,7 +54,6 @@ public class Hero : MonoBehaviour
         {
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,100);
-            Debug.Log(hit.collider.gameObject.name);
             if (hit)
             {
                 Life filter = hit.collider.GetComponent<Life>();
@@ -66,7 +65,6 @@ public class Hero : MonoBehaviour
                 else
                 {
                     particleHeal.gameObject.SetActive(false);
-                    Debug.Log(hit.collider.gameObject.name);
                     action = Action.Move;
                     Position = hit.point;
                 }
@@ -81,12 +79,16 @@ public class Hero : MonoBehaviour
 
     Action ChooseAction(Life life)
     {
-        Debug.Log(life.status);
         if (life.status == Status.Ally)
         {
             lifeTarget = life;
             target = life.gameObject;
             return Action.Heal;
+        }
+        else
+        {
+            Position = life.gameObject.transform.position;
+            return Action.Move;
         }
         particleHeal.gameObject.SetActive(false);
         return Action.Move;

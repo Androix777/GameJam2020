@@ -7,7 +7,10 @@ public class Life : MonoBehaviour
     public int maxHP;
     public int HP;
     public Status status;
-    private bool dead = false;
+    public bool dead = false;
+
+    [SerializeField]
+    bool immortal = false;
 
     void Start()
     {
@@ -24,10 +27,17 @@ public class Life : MonoBehaviour
         HP -= damage;
         if (HP <= 0 && !dead)
         {
-            Functions.DestroyWithDeathEffects(gameObject, deathCause: DeathCause.Kill);
+            if (!immortal)
+            {
+                Functions.DestroyWithDeathEffects(gameObject, deathCause: DeathCause.Kill);
+            }
             dead = true;
         }
-        else HP = HP > maxHP ? maxHP : HP;
+        else
+        {
+            dead = false;
+            HP = HP > maxHP ? maxHP : HP;
+        }
 
     }
 
