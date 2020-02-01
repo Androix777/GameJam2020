@@ -11,6 +11,8 @@ public class Shooter : MonoBehaviour
     public float angleBetweenGuns;
     public bool setMoveForward = true;
     public float forwardOffset = 0;
+    public float xOffset = 0;
+    public float yOffset = 0;
     public float angleOffset = 0;
     public bool autoShooting = false;
     [SerializeField] private GameObject projectile;
@@ -38,7 +40,10 @@ public class Shooter : MonoBehaviour
             for (int i = 0; i < numOfGuns; i++)
             {
                 lastShootTime = Time.time;
-                lastProjectile = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
+                Vector3 projectilePosition = gameObject.transform.position;
+                projectilePosition.x += xOffset;
+                projectilePosition.y += yOffset;
+                lastProjectile = Instantiate(projectile, projectilePosition, Quaternion.identity);
                 lastProjectile.transform.Rotate(new Vector3(0, 0, angle + ((angleBetweenGuns * (numOfGuns-1)) / 2) - angleBetweenGuns * i + angleOffset));
                 lastProjectile.transform.Translate(-(distanceBetweenGuns * (numOfGuns - 1)) / 2 + i * distanceBetweenGuns, forwardOffset, 0);
                 lastProjectile.SetActive(true);
