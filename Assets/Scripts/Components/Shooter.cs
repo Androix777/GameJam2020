@@ -15,6 +15,7 @@ public class Shooter : MonoBehaviour
     public float yOffset = 0;
     public float angleOffset = 0;
     public bool autoShooting = false;
+    public int damagePerShoot = 0;
     [SerializeField] private GameObject projectile;
     private GameObject lastProjectile;
     private Vector2 moveVector;
@@ -55,6 +56,10 @@ public class Shooter : MonoBehaviour
                 lastProjectile.transform.parent = gameObject.transform.parent;
             }
         }
+        Life life = gameObject.GetComponent<Life>();
+        if (life != null) life.DealDamage(damagePerShoot);
+
+
     }
 
     public void Shoot(Vector2 vector, bool must = false)
