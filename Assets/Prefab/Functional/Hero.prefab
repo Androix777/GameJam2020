@@ -135,8 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleHeal: {fileID: 721482033929989123}
   range: 1
-  heal: 1
-  coolDown: 5
+  heal: 15
+  coolDown: 1
+  energy: -1
 --- !u!1 &8769396393049766992
 GameObject:
   m_ObjectHideFlags: 0
