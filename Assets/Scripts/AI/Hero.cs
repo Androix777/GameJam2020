@@ -9,7 +9,7 @@ public class Hero : MonoBehaviour
     Vector2 Position = new Vector2();
     GameObject target;
     Life lifeTarget;
-    Action action;
+    Action action = Action.Stay;
     Move move;
     [SerializeField]
     ParticleSystem particleHeal;
@@ -142,8 +142,6 @@ public class Hero : MonoBehaviour
                         }
                     }
                 }
-                
-                
             }
             else
             {
