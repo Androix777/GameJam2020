@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour
     public float angleOffset = 0;
     public bool autoShooting = false;
     public int damagePerShoot = 0;
-    [SerializeField] private GameObject projectile;
+    public GameObject projectile;
     private GameObject lastProjectile;
     private Vector2 moveVector;
     private float lastShootTime = 0;
