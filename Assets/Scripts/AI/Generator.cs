@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+
+    public float coolDown;
+    public float energy;
+
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,19 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            addEnergy();
+            timer = coolDown;
+        }
+    }
+
+    void addEnergy()
+    {
+        Core.SetEnergy(Core.GetEnergy() + energy);
     }
 }

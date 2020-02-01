@@ -13,14 +13,18 @@ public class Hero : MonoBehaviour
     Move move;
     [SerializeField]
     ParticleSystem particleHeal;
+
     [SerializeField]
-    float range = 0;
+    public float range = 0;
     [SerializeField]
-    int heal = 0;
+    public int heal = 0;
     [SerializeField]
-    float coolDown = 0;
+    public float coolDown = 0;
+    [SerializeField]
+    public float energy  = 0;
 
     float timer = 0;
+    
 
     //float 
     // Start is called before the first frame update
@@ -125,13 +129,14 @@ public class Hero : MonoBehaviour
                 Stay();
                 if (lifeTarget != null)
                 {
-                    if (particleHeal != null)
+                    if (particleHeal != null && Core.GetEnergy() > energy)
                     {
                         particleHeal.startLifetime = Vector2.Distance(gameObject.transform.position, target.transform.position) / range * 0.7f;
                         particleHeal.gameObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, target.transform.position - transform.position));
                         particleHeal.gameObject.SetActive(true);
                         if (timer <= 0)
                         {
+                            Core.SetEnergy(Core.GetEnergy() - energy);
                             lifeTarget.DealDamage(-heal);
                             timer = coolDown;
                         }
