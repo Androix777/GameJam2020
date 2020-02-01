@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5601440116864078694}
   - component: {fileID: 5595981764832168792}
   - component: {fileID: 103928071351602220}
+  - component: {fileID: 499911426}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -50,6 +51,10 @@ MonoBehaviour:
   status: 0
   dead: 0
   immortal: 0
+  upgradePoints: 
+  upgradeResetPoints: 
+  level: 0
+  upgradable: 0
 --- !u!68 &103928071351602220
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -93,6 +98,23 @@ EdgeCollider2D:
   - {x: -0.29278708, y: -0.52736044}
   - {x: -0.3421116, y: -0.5918542}
   - {x: -0.34474325, y: -0.63394165}
+--- !u!114 &499911426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347552354538788985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cebdcafb5d7c314fa5e2d29609e72ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 4576142406210982289}
+  - {fileID: 6554913909679243256}
+  - {fileID: 7532341016236377977}
+  - {fileID: 4825388772155953497}
 --- !u!1001 &504291479829279011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +197,30 @@ PrefabInstance:
 --- !u!4 &5211041141179625971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5669693430923509968, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 504291479829279011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4576142406210982289 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4142787362834112690, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 504291479829279011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6554913909679243256 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6631586827424255707, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 504291479829279011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7532341016236377977 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7960070915640079962, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 504291479829279011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4825388772155953497 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4902348412931367034, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
     type: 3}
   m_PrefabInstance: {fileID: 504291479829279011}
   m_PrefabAsset: {fileID: 0}

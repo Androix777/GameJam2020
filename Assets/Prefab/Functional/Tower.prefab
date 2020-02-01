@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6461278909596159463}
   - component: {fileID: 6461278909596159462}
   - component: {fileID: 6461278909596159466}
+  - component: {fileID: 200842312}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  HP: 1
+  HP: 100
   status: 0
   dead: 0
   immortal: 1
@@ -120,6 +121,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.63991666, y: 0.6786499}
   m_EdgeRadius: 0
+--- !u!114 &200842312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461278909596159464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cebdcafb5d7c314fa5e2d29609e72ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 8718252110868620619}
+  - {fileID: 152699314183546429}
 --- !u!1001 &6461278909405738235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,6 +304,18 @@ PrefabInstance:
 --- !u!4 &6883159081259332967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445564271296606884, guid: 638687dbf98bb0f4281c7f743e0d7685,
+    type: 3}
+  m_PrefabInstance: {fileID: 6461278909471786947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8718252110868620619 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2402220657247363720, guid: 638687dbf98bb0f4281c7f743e0d7685,
+    type: 3}
+  m_PrefabInstance: {fileID: 6461278909471786947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &152699314183546429 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6608308806114943486, guid: 638687dbf98bb0f4281c7f743e0d7685,
     type: 3}
   m_PrefabInstance: {fileID: 6461278909471786947}
   m_PrefabAsset: {fileID: 0}

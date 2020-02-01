@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2833158362242026417}
   - component: {fileID: 6476203880779113588}
   - component: {fileID: 5913596179218979092}
+  - component: {fileID: 847289480}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -79,6 +80,24 @@ MonoBehaviour:
   status: 0
   dead: 0
   immortal: 0
+  upgradePoints: 
+  upgradeResetPoints: 
+  level: 0
+  upgradable: 0
+--- !u!114 &847289480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358619380626622908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cebdcafb5d7c314fa5e2d29609e72ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 7214253337373046392}
 --- !u!1001 &72675768020125457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +170,12 @@ PrefabInstance:
 --- !u!4 &2709797088987299755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2637156793924974778, guid: cd2734facb8e0e145b628e3e1213da95,
+    type: 3}
+  m_PrefabInstance: {fileID: 72675768020125457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7214253337373046392 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7285732424407167337, guid: cd2734facb8e0e145b628e3e1213da95,
     type: 3}
   m_PrefabInstance: {fileID: 72675768020125457}
   m_PrefabAsset: {fileID: 0}
