@@ -20,9 +20,11 @@ public class Life : MonoBehaviour
     public int [] upgradeResetPoints;
     public int level = 0;
     public bool upgradable = false;
+    Upgrader upgrader;
 
     void Start()
     {
+        upgrader = gameObject.GetComponent<Upgrader>();
         if (upgradable)
         {
             for (int i = upgradePoints.Length-1; i >= 0; i--)
@@ -30,7 +32,7 @@ public class Life : MonoBehaviour
                 if (HP >= upgradePoints[i])
                 {
                     level = i + 1;
-                    
+                    upgrader.AddUpgrade();
                     break;
                 }
             }
@@ -64,13 +66,13 @@ public class Life : MonoBehaviour
         while (upgradable && level > 0 && HP < upgradeResetPoints[level-1])
         {
             level--;
-
+            upgrader.RemoveUpgrade();
         }
 
         while (upgradable && level < upgradePoints.Length && HP > upgradePoints[level])
         {
             level++;
-
+            upgrader.AddUpgrade();
         }
     }
 
