@@ -24,7 +24,7 @@ public class Life : MonoBehaviour
 
     public void DealDamage(int damage)
     {
-        HP -= damage;
+        HP = HP - damage < 0 ? 0 : HP - damage;
         if (HP <= 0 && !dead)
         {
             if (!immortal)
@@ -33,10 +33,12 @@ public class Life : MonoBehaviour
             }
             dead = true;
         }
-        else
+        HP = HP > maxHP ? maxHP : HP;
+
+        if (HP > 0 && dead)
         {
             dead = false;
-            HP = HP > maxHP ? maxHP : HP;
+            
         }
 
     }

@@ -56,7 +56,7 @@ public class Turret : MonoBehaviour
         {
             b = !life.dead;
         }
-        if (shooter != null & b)
+        if (shooter != null && b)
         {
             shooter.Shoot((Vector2)transform.position);
         }
