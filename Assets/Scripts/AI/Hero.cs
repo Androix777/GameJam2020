@@ -11,7 +11,8 @@ public class Hero : MonoBehaviour
     Life lifeTarget;
     Action action;
     Move move;
-
+    [SerializeField]
+    ParticleSystem particleHeal;
     [SerializeField]
     float range = 0;
     [SerializeField]
@@ -51,6 +52,7 @@ public class Hero : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,100);
             Debug.Log(hit.collider.gameObject.name);
             if (hit)
@@ -63,6 +65,7 @@ public class Hero : MonoBehaviour
                 }
                 else
                 {
+                    particleHeal.gameObject.SetActive(false);
                     Debug.Log(hit.collider.gameObject.name);
                     action = Action.Move;
                     Position = hit.point;
@@ -71,6 +74,7 @@ public class Hero : MonoBehaviour
             else
             {
                 action = Action.Stay;
+                particleHeal.gameObject.SetActive(false);
             }
         }
     }
@@ -84,6 +88,7 @@ public class Hero : MonoBehaviour
             target = life.gameObject;
             return Action.Heal;
         }
+        particleHeal.gameObject.SetActive(false);
         return Action.Move;
     }
 
@@ -116,11 +121,22 @@ public class Hero : MonoBehaviour
             if (Vector2.Distance(gameObject.transform.position, target.transform.position) <= range)
             {
                 Stay();
-                if (lifeTarget != null && timer <= 0)
+                if (lifeTarget != null)
                 {
-                    lifeTarget.DealDamage(-heal);
-                    timer = coolDown;
+                    if (particleHeal != null)
+                    {
+                        particleHeal.startLifetime = Vector2.Distance(gameObject.transform.position, target.transform.position) / range * 0.7f;
+                        particleHeal.gameObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, target.transform.position - transform.position));
+                        particleHeal.gameObject.SetActive(true);
+                        if (timer <= 0)
+                        {
+                            lifeTarget.DealDamage(-heal);
+                            timer = coolDown;
+                        }
+                    }
                 }
+                
+                
             }
             else
             {

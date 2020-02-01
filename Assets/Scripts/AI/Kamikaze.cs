@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Kamikaze : MonoBehaviour
 {
+    Move move;
     // Start is called before the first frame update
     void Start()
     {
-        
+        move = GetComponent<Move>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class Kamikaze : MonoBehaviour
 
     void CreateMoveDirection()
     {
-        
+        move.SetMove(Vector2.left);
     }
 
     void Attack()
