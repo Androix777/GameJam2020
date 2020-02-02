@@ -16,6 +16,7 @@ public class UpgradeExplosiveProjectiles : MonoBehaviour
         shooter = gameObject.GetComponent<Shooter>();
         projectile2 = Instantiate(shooter.projectile, gameObject.transform.position, Quaternion.identity);
         projectile2.transform.parent = shooter.projectile.transform;
+        projectile2.transform.localScale = shooter.projectile.transform.localScale;
         shooter2 = shooter.projectile.AddComponent<Shooter>();
         shooter2.projectile = projectile2;
         shooter2.numOfGuns = 6;

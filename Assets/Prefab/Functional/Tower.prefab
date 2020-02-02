@@ -167,6 +167,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82eae44680be2fe4588b4372b40db3b1,
+        type: 3}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8527191012604452455, guid: 879fa90d404f52343b5dcebd9125531b,
         type: 3}
       propertyPath: destroyAfterDealDamage
@@ -231,6 +247,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900880807779328846, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900880807779328846, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879fa90d404f52343b5dcebd9125531b, type: 3}
