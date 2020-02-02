@@ -9,6 +9,7 @@ public class Kamikaze : MonoBehaviour
     void Start()
     {
         move = GetComponent<Move>();
+        CreateMoveDirection();
     }
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class Kamikaze : MonoBehaviour
 
     void CreateMoveDirection()
     {
+        if (move != null)
         move.SetMove(Vector2.left);
     }
 
