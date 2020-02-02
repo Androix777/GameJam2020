@@ -132,7 +132,7 @@ public class Hero : MonoBehaviour
                 {
                     if (particleHeal != null)
                     {
-                        particleHeal.gameObject.SetActive(false);
+                       
                         if (Core.GetEnergy() > energy)
                         {
                             particleHeal.startLifetime = Vector2.Distance(gameObject.transform.position, target.transform.position) / range * 0.7f;
@@ -144,6 +144,10 @@ public class Hero : MonoBehaviour
                                 lifeTarget.DealDamage(-heal);
                                 timer = coolDown;
                             }
+                        }
+                        else
+                        {
+                            particleHeal.gameObject.SetActive(false);
                         }
                     }
                 }
