@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeFireRate : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; }
+    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i5.npg") as Sprite;
     public float rateAmount = 0.2f;
     // Start is called before the first frame update
     void Start()

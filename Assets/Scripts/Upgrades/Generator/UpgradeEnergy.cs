@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeEnergy : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; }
+    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i10.npg") as Sprite;
     public int energyAmount = 10;
 
     // Start is called before the first frame update

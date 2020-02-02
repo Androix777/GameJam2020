@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeAbsorb : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; }
+    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i11.npg") as Sprite;
     [SerializeField]
     float absorb = 0;
     // Start is called before the first frame update

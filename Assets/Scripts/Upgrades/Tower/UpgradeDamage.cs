@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class UpgradeDamage : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; }
+    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i3.npg") as Sprite;
 
     public int damageBonus = 5;
 
