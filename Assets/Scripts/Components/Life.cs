@@ -31,7 +31,7 @@ public class Life : MonoBehaviour
         {
             for (int i = upgradePoints.Length-1; i >= 0; i--)
             {
-                if (HP >= upgradePoints[i])
+                if (HP / (float)maxHP * 100f >= upgradePoints[i])
                 {
                     level = i + 1;
                     for (int j = 0; j <= i; j++) upgrader.AddUpgrade();
@@ -70,13 +70,13 @@ public class Life : MonoBehaviour
             GetComponent<Collider2D>().isTrigger = false;
         }
 
-        while (upgradable && level > 0 && HP < upgradeResetPoints[level-1])
+        while (upgradable && level > 0 && HP / (float)maxHP * 100f < upgradeResetPoints[level-1])
         {
             level--;
             upgrader.RemoveUpgrade();
         }
 
-        while (upgradable && level < upgradePoints.Length && HP > upgradePoints[level])
+        while (upgradable && level < upgradePoints.Length && HP / (float)maxHP * 100f > upgradePoints[level])
         {
             level++;
             upgrader.AddUpgrade();
