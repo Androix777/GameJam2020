@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5595981764832168792}
   - component: {fileID: 499911426}
   - component: {fileID: 8452629404005351516}
+  - component: {fileID: -8068994557078291886}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -47,14 +48,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 75
-  HP: 75
+  HP: 1
   status: 0
   dead: 0
-  immortal: 0
+  immortal: 1
   upgradePoints: 
   upgradeResetPoints: 
   level: 0
   upgradable: 0
+  absorpdProc: 0
 --- !u!114 &499911426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +118,24 @@ PolygonCollider2D:
       - {x: -0.35439253, y: -0.63738286}
       - {x: 0.41653037, y: -0.637836}
       - {x: 0.3696916, y: -0.51084924}
+--- !u!114 &-8068994557078291886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347552354538788985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ad661dc4b5bc549b9f892cae373393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityType: 1
+  Anim: {fileID: 8748710453448040544, guid: 639c4fcc7ee8b8b44b8a985b9c6fb2cb, type: 3}
+  particAdd: {fileID: 2908474009924348140, guid: f8b81df3fd57c4e4da3e8382f720cfb4,
+    type: 3}
+  particLoss: {fileID: 6192015494579577921, guid: 3f720765af18bd440aa4811125adfe2d,
+    type: 3}
 --- !u!1001 &504291479829279011
 PrefabInstance:
   m_ObjectHideFlags: 0
