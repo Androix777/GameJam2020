@@ -80,7 +80,7 @@ public class Tank : MonoBehaviour
             float dist = float.MaxValue;
             foreach (Collider2D collider in colliders)
             {
-                if (collider.GetComponent<Life>() && collider.GetComponent<Life>().status == Status.Enemy)
+                if (collider.GetComponent<Life>() && collider.GetComponent<Life>().status == Status.Ally && !collider.GetComponent<Life>().dead)
                 {
                     if (Vector2.Distance((Vector2)transform.position, (Vector2)collider.transform.position) < dist)
                     {

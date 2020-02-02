@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
         foreach (GameObject mob in mobs)
         {
             GameObject obj = Instantiate(mob) as GameObject;
-            obj.transform.position = new Vector3(Random.Range(0, range), Random.Range(0, range),0);
+            obj.transform.position = new Vector3(Random.Range(this.transform.position.x, this.transform.position.x + range), Random.Range(this.transform.position.y, this.transform.position.y + range),0);
         }
     }
 

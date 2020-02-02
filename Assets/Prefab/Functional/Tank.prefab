@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2311549877031265856}
   - component: {fileID: 9153040711876328609}
   - component: {fileID: 1825354126}
-  - component: {fileID: 1825354127}
   - component: {fileID: 1825354128}
   - component: {fileID: 1825354129}
+  - component: {fileID: -520231939690246487}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -81,7 +81,7 @@ MonoBehaviour:
   xOffset: 0
   yOffset: 0.12
   angleOffset: 90
-  autoShooting: 1
+  autoShooting: 0
   damagePerShoot: 0
   projectile: {fileID: 7185449160028803178}
 --- !u!60 &9153040711876328609
@@ -142,18 +142,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1825354127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2311549877031265863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56abecce6de9c0b4d9a2fade996438fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1825354128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +171,20 @@ MonoBehaviour:
   damage: 10
   status: 1
   destroyAfterDealDamage: 1
+--- !u!114 &-520231939690246487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311549877031265863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4dc1b4e1945ae641b07afdd4c71d8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 3
+  rangeVert: 3
 --- !u!1001 &2311549876274308695
 PrefabInstance:
   m_ObjectHideFlags: 0
