@@ -52,10 +52,10 @@ MonoBehaviour:
   status: 0
   dead: 0
   immortal: 1
-  upgradePoints: 
-  upgradeResetPoints: 
+  upgradePoints: 1e000000
+  upgradeResetPoints: 14000000
   level: 0
-  upgradable: 0
+  upgradable: 1
   absorpdProc: 0
 --- !u!114 &847289480
 MonoBehaviour:
