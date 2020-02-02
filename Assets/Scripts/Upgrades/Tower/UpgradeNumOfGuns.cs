@@ -31,6 +31,6 @@ public class UpgradeNumOfGuns : MonoBehaviour, IUpgrade
 
     public Sprite GetIcon()
     {
-        return Resources.Load<Sprite>("icons/" + "i8") as Sprite;
+        return Resources.Load<Sprite>("icons/" + "i1") as Sprite;
     }
 }

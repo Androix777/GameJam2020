@@ -24,6 +24,6 @@ public class UpgradeAbsorb : MonoBehaviour, IUpgrade
 
     public Sprite GetIcon()
     {
-        return Resources.Load<Sprite>("icons/" + "i8") as Sprite;
+        return Resources.Load<Sprite>("icons/" + "i11") as Sprite;
     }
 }
