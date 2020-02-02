@@ -130,16 +130,20 @@ public class Hero : MonoBehaviour
                 Stay();
                 if (lifeTarget != null)
                 {
-                    if (particleHeal != null && Core.GetEnergy() > energy)
+                    if (particleHeal != null)
                     {
-                        particleHeal.startLifetime = Vector2.Distance(gameObject.transform.position, target.transform.position) / range * 0.7f;
-                        particleHeal.gameObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, target.transform.position - transform.position));
-                        particleHeal.gameObject.SetActive(true);
-                        if (timer <= 0)
+                        particleHeal.gameObject.SetActive(false);
+                        if (Core.GetEnergy() > energy)
                         {
-                            Core.SetEnergy(Core.GetEnergy() - energy);
-                            lifeTarget.DealDamage(-heal);
-                            timer = coolDown;
+                            particleHeal.startLifetime = Vector2.Distance(gameObject.transform.position, target.transform.position) / range * 0.7f;
+                            particleHeal.gameObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, target.transform.position - transform.position));
+                            particleHeal.gameObject.SetActive(true);
+                            if (timer <= 0)
+                            {
+                                Core.SetEnergy(Core.GetEnergy() - energy);
+                                lifeTarget.DealDamage(-heal);
+                                timer = coolDown;
+                            }
                         }
                     }
                 }
