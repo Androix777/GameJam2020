@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 
-public class UpgradeNumOfGuns : MonoBehaviour
+public class UpgradeNumOfGuns : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
 
     Shooter shooter;
 

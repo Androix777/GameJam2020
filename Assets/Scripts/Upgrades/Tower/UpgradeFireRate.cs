@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeFireRate : MonoBehaviour
+public class UpgradeFireRate : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
     public float rateAmount = 0.2f;
     // Start is called before the first frame update
     void Start()

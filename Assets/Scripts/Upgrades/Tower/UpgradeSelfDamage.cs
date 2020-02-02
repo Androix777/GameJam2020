@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeSelfDamage : MonoBehaviour
+public class UpgradeSelfDamage : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
     public int damageAmount = 5;
     // Start is called before the first frame update
     void Start()

@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 
-public class UpgradeDamage : MonoBehaviour
+public class UpgradeDamage : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
 
     public int damageBonus = 5;
 

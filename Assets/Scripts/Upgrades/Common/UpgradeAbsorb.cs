@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeAbsorb : MonoBehaviour
+public class UpgradeAbsorb : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
     [SerializeField]
     float absorb = 0;
     // Start is called before the first frame update

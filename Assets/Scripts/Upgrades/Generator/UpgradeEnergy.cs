@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeEnergy : MonoBehaviour
+public class UpgradeEnergy : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
     public int energyAmount = 10;
 
     // Start is called before the first frame update

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeReflect : MonoBehaviour
+public class UpgradeReflect : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
 
     public int reflectChance = 50;
     // Start is called before the first frame update

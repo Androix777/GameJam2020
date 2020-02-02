@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 
-public class UpgradeExplosiveProjectiles : MonoBehaviour
+public class UpgradeExplosiveProjectiles : MonoBehaviour, IUpgrade
 {
+    public Sprite icon { get; set; }
 
     Shooter shooter, shooter2;
     ShootOnDeath shootOnDeath;
