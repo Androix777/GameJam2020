@@ -77,7 +77,7 @@ MonoBehaviour:
   setMoveForward: 1
   forwardOffset: 0
   xOffset: 0
-  yOffset: 0
+  yOffset: 0.3
   angleOffset: 0
   autoShooting: 0
   damagePerShoot: 1
