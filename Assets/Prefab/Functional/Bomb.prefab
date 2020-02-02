@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 3622524002277488166}
   - component: {fileID: 2579317652116712868}
   - component: {fileID: 1895919136}
+  - component: {fileID: 1283351737}
+  - component: {fileID: 1283351735}
+  - component: {fileID: 1283351736}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -55,6 +58,7 @@ MonoBehaviour:
   upgradeResetPoints: 
   level: 0
   upgradable: 0
+  absorpdProc: 0
 --- !u!114 &2579317652116712868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +90,53 @@ CircleCollider2D:
   m_Offset: {x: -0.054133415, y: 0.05411005}
   serializedVersion: 2
   m_Radius: 0.46908045
+--- !u!50 &1283351737
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052349831942544473}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1283351735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052349831942544473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56abecce6de9c0b4d9a2fade996438fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1283351736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052349831942544473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d97386ba09bbe498ad9ff7c366b179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotateSprite: 0
+  speed: 1
 --- !u!1001 &393347603316429315
 PrefabInstance:
   m_ObjectHideFlags: 0
