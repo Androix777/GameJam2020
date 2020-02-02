@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeSelfDamage : MonoBehaviour, IUpgrade
 {
 
-    public int damageAmount = 5;
+    public int damageAmount = -1;
     // Start is called before the first frame update
 
 

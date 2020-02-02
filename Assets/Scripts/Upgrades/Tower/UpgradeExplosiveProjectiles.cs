@@ -23,6 +23,7 @@ public class UpgradeExplosiveProjectiles : MonoBehaviour, IUpgrade
         shooter2.angleBetweenGuns = 60;
         shooter2.forwardOffset = 0.1f;
         shootOnDeath = shooter.projectile.AddComponent<ShootOnDeath>();
+        //shootOnDeath.allowedDeathCause = DeathCause.Сollision;
         shootOnDeath.shooter = shooter2;
     }
 
