@@ -10,7 +10,7 @@ public class Upgrader : MonoBehaviour
     List<string> generatorUpgrades = new List<string>() {"UpgradeEnergy", "UpgradeRegenerate", "UpgradeAbsorb"};
 
     Stack<IUpgrade> upgrades = new Stack<IUpgrade>();
-    public GameObject Anim;
+    public GameObject Anim, particAdd, particLoss;
     GameObject lastAnim;
     void Start()
     {
@@ -28,37 +28,35 @@ public class Upgrader : MonoBehaviour
         if(entityType == EntityType.Tower)
         {
             String upgr = towerUpgrades[UnityEngine.Random.Range(0, towerUpgrades.Count)];
-            Debug.Log(Type.GetType(upgr));
             component = gameObject.AddComponent(Type.GetType(upgr)) as IUpgrade;
             upgrades.Push(component);
             lastAnim = Instantiate(Anim, gameObject.transform.position, Quaternion.identity);
             lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = component.GetIcon();
-            Debug.Log(component.GetIcon());
+            Instantiate(particAdd, gameObject.transform.position, Quaternion.identity);
         }
         else if(entityType == EntityType.Wall)
         {
             String upgr = shieldUpgrades[UnityEngine.Random.Range(0, shieldUpgrades.Count)];
-            Debug.Log(Type.GetType(upgr));
             component = gameObject.AddComponent(Type.GetType(upgr)) as IUpgrade;
             upgrades.Push(component);
             lastAnim = Instantiate(Anim, gameObject.transform.position, Quaternion.identity);
             lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = component.GetIcon();
-            Debug.Log(component.GetIcon());
+            Instantiate(particAdd, gameObject.transform.position, Quaternion.identity);
         }
         else if(entityType == EntityType.Generator)
         {
             String upgr = generatorUpgrades[UnityEngine.Random.Range(0, generatorUpgrades.Count)];
-            Debug.Log(Type.GetType(upgr));
             component = gameObject.AddComponent(Type.GetType(upgr)) as IUpgrade;
             upgrades.Push(component);
             lastAnim = Instantiate(Anim, gameObject.transform.position, Quaternion.identity);
             lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = component.GetIcon();
-            Debug.Log(component.GetIcon());
+            Instantiate(particAdd, gameObject.transform.position, Quaternion.identity);
         }
     }
 
     public void RemoveUpgrade() 
     {
         if (upgrades.Count > 0) Destroy(upgrades.Pop() as Component);
+        Instantiate(particLoss, gameObject.transform.position, Quaternion.identity);
     }
 }
