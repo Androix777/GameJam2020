@@ -37,27 +37,23 @@ public class Upgrader : MonoBehaviour
         }
         else if(entityType == EntityType.Wall)
         {
-            /*
             String upgr = shieldUpgrades[UnityEngine.Random.Range(0, shieldUpgrades.Count)];
             Debug.Log(Type.GetType(upgr));
-            component = gameObject.AddComponent(Type.GetType(upgr));
+            component = gameObject.AddComponent(Type.GetType(upgr)) as IUpgrade;
             upgrades.Push(component);
             lastAnim = Instantiate(Anim, gameObject.transform.position, Quaternion.identity);
-            lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = (component as IUpgrade).GetIcon();
-            Debug.Log((component as IUpgrade).GetIcon());
-            */
+            lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = component.GetIcon();
+            Debug.Log(component.GetIcon());
         }
         else if(entityType == EntityType.Generator)
         {
-            /*
             String upgr = generatorUpgrades[UnityEngine.Random.Range(0, generatorUpgrades.Count)];
             Debug.Log(Type.GetType(upgr));
-            component = gameObject.AddComponent(Type.GetType(upgr));
+            component = gameObject.AddComponent(Type.GetType(upgr)) as IUpgrade;
             upgrades.Push(component);
             lastAnim = Instantiate(Anim, gameObject.transform.position, Quaternion.identity);
-            lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = (component as IUpgrade).GetIcon();
-            Debug.Log((component as IUpgrade).GetIcon());
-            */
+            lastAnim.transform.Find("i1").GetComponent<SpriteRenderer>().sprite = component.GetIcon();
+            Debug.Log(component.GetIcon());
         }
     }
 
