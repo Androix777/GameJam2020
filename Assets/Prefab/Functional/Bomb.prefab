@@ -84,7 +84,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.054133415, y: 0.05411005}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotateSprite: 0
-  speed: 1
+  speed: 0.5
 --- !u!1001 &393347603316429315
 PrefabInstance:
   m_ObjectHideFlags: 0
