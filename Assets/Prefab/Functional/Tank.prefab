@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 2311549877031265857}
   - component: {fileID: 2311549877031265856}
   - component: {fileID: 9153040711876328609}
+  - component: {fileID: 1825354126}
+  - component: {fileID: 1825354127}
+  - component: {fileID: 1825354128}
+  - component: {fileID: 1825354129}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -55,6 +59,7 @@ MonoBehaviour:
   upgradeResetPoints: 
   level: 0
   upgradable: 0
+  absorpdProc: 0
 --- !u!114 &2311549877031265856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +121,68 @@ PolygonCollider2D:
       - {x: 0.4400357, y: -0.39939928}
       - {x: 0.51057005, y: -0.26136208}
       - {x: 0.45726287, y: -0.10229945}
+--- !u!50 &1825354126
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311549877031265863}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1825354127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311549877031265863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56abecce6de9c0b4d9a2fade996438fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1825354128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311549877031265863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d97386ba09bbe498ad9ff7c366b179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotateSprite: 0
+  speed: 0.8
+--- !u!114 &1825354129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311549877031265863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cd2728d381f8647b2f6cc9b70e7c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  status: 1
+  destroyAfterDealDamage: 1
 --- !u!1001 &2311549876274308695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695755464336417909, guid: 0a1f54b447fc44443a4534baf8469c3a,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a1f54b447fc44443a4534baf8469c3a, type: 3}
