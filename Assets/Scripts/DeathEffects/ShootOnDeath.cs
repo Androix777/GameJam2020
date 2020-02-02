@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootOnDeath : MonoBehaviour, IDeathEffect
 {
-    [SerializeField] private Shooter shooter;
+    public Shooter shooter;
     [SerializeField] private DeathCause allowedDeathCause;
     public DeathCause AllowedDeathCause { get => allowedDeathCause; set => allowedDeathCause = value; }
 

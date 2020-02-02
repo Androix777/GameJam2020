@@ -50,7 +50,6 @@ public class ChangerColor : MonoBehaviour
         float hpPart = life.HP / max * 100;
         if (status == Status.Ally)
         {
-            Debug.Log(hpPart);
             if (hpPart <= 50)
             {
                 Color from = colorsAlly[0];
