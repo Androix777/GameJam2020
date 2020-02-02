@@ -15,6 +15,6 @@ public class EnergyUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<Text>().text = Core.GetEnergy().ToString();
     }
 }

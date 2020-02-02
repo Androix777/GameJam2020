@@ -16,6 +16,7 @@ public class Tank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shooter = GetComponent<Shooter>();
         move = GetComponent<Move>();
         CreateMoveDirection(Vector2.left);
     }
@@ -103,6 +104,7 @@ public class Tank : MonoBehaviour
         if (shooter != null && b)
         {
             shooter.Shoot((Vector2)target.transform.position - (Vector2)transform.position);
+            Debug.Log((Vector2)target.transform.position - (Vector2)transform.position);
         }
     }
 
