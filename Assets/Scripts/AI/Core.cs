@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Core : MonoBehaviour
 {
-    public static float energyMax = 1000;
+    public static float energyMax = 100;
 
-    private static float energy = 100;
+    private static float energy = 75;
     // Start is called before the first frame update
     void Start()
     {
