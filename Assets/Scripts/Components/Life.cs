@@ -22,6 +22,8 @@ public class Life : MonoBehaviour
     public bool upgradable = false;
     Upgrader upgrader;
 
+    public float absorpdProc = 0;
+
     void Start()
     {
         upgrader = gameObject.GetComponent<Upgrader>();
@@ -47,12 +49,17 @@ public class Life : MonoBehaviour
     public void DealDamage(int damage)
     {
         HP = HP - damage < 0 ? 0 : HP - damage;
+        if (damage > 0)
+        {
+            Core.SetEnergy(Core.GetEnergy ()+ damage * absorpdProc);
+        }
         if (HP <= 0 && !dead)
         {
             if (!immortal)
             {
                 Functions.DestroyWithDeathEffects(gameObject, deathCause: DeathCause.Kill);
             }
+            GetComponent<Collider2D>().isTrigger = true;
             dead = true;
         }
         HP = HP > maxHP ? maxHP : HP;
@@ -60,7 +67,7 @@ public class Life : MonoBehaviour
         if (HP > 0 && dead)
         {
             dead = false;
-            
+            GetComponent<Collider2D>().isTrigger = false;
         }
 
         while (upgradable && level > 0 && HP < upgradeResetPoints[level-1])
