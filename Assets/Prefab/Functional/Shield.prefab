@@ -85,7 +85,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03, y: 0.27}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -123,6 +123,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5601440116864078694}
     m_Modifications:
+    - target: {fileID: 955737265292950978, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 86a55d1346075104f924bdd01197ee4e, type: 2}
     - target: {fileID: 1039239076459522727, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
         type: 3}
       propertyPath: m_Name
@@ -131,17 +136,17 @@ PrefabInstance:
     - target: {fileID: 5669693430923509968, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.030486584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669693430923509968, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27536342
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669693430923509968, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.2069008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669693430923509968, guid: 8d7d5c04c26c61a43be3ebed18bdf39f,
         type: 3}

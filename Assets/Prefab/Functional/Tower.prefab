@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6461278909596159467}
   - component: {fileID: 6461278909596159463}
   - component: {fileID: 6461278909596159462}
-  - component: {fileID: 6461278909596159466}
   - component: {fileID: 200842312}
+  - component: {fileID: 5807311054208790897}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   setMoveForward: 1
   forwardOffset: 0
   xOffset: 0
-  yOffset: 0
+  yOffset: 0.3
   angleOffset: 0
   autoShooting: 0
   damagePerShoot: 1
@@ -95,32 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
---- !u!61 &6461278909596159466
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6461278909596159464}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0011748075, y: -0.15512365}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63991666, y: 0.6786499}
-  m_EdgeRadius: 0
 --- !u!114 &200842312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +110,46 @@ MonoBehaviour:
   sprites:
   - {fileID: 8718252110868620619}
   - {fileID: 152699314183546429}
+--- !u!60 &5807311054208790897
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461278909596159464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.010124445, y: 0.4686972}
+      - {x: -0.13603961, y: 0.50635767}
+      - {x: -0.28122354, y: 0.3553195}
+      - {x: -0.2613244, y: 0.13097525}
+      - {x: -0.11218834, y: -0.0162251}
+      - {x: -0.19502151, y: -0.313133}
+      - {x: -0.32961214, y: -0.3333745}
+      - {x: -0.33146524, y: -0.5069313}
+      - {x: 0.32961237, y: -0.50541544}
+      - {x: 0.33009267, y: -0.33622956}
+      - {x: 0.20060623, y: -0.31734657}
+      - {x: 0.11687219, y: -0.013698578}
+      - {x: 0.26737916, y: 0.15207982}
+      - {x: 0.2776307, y: 0.35238028}
+      - {x: 0.12591481, y: 0.51647806}
 --- !u!1001 &6461278909405738235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +166,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82eae44680be2fe4588b4372b40db3b1,
+        type: 3}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816018360725656733, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8527191012604452455, guid: 879fa90d404f52343b5dcebd9125531b,
         type: 3}
@@ -217,6 +247,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900880807779328846, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900880807779328846, guid: 879fa90d404f52343b5dcebd9125531b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879fa90d404f52343b5dcebd9125531b, type: 3}

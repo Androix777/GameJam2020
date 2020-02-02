@@ -30,6 +30,13 @@ public class DamageDealer : MonoBehaviour
 
     private void DealDamage(GameObject target)
     {
+        if (target.GetComponent<UpgradeReflect>() != null && target.GetComponent<UpgradeReflect>().reflectChance > Random.Range(0, 100))
+        {
+            this.transform.Rotate(new Vector3(0, 0, this.transform.rotation.z + 180));
+            gameObject.GetComponent<Rigidbody2D>().velocity *= -1;
+            gameObject.GetComponent<DamageDealer>().status = Status.Ally;
+            return;
+        }
         if (target.GetComponent<Life>() != null && target.GetComponent<Life>().status != status)
         {
             target.GetComponent<Life>().DealDamage(damage);
