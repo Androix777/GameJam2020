@@ -32,7 +32,7 @@ public class Life : MonoBehaviour
                 if (HP >= upgradePoints[i])
                 {
                     level = i + 1;
-                    upgrader.AddUpgrade();
+                    for (int j = 0; j <= i; j++) upgrader.AddUpgrade();
                     break;
                 }
             }
