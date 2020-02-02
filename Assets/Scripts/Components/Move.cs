@@ -27,4 +27,10 @@ public class Move : MonoBehaviour
         
         rb2d.velocity = vector.normalized * speed;
     }
+
+    public void Stop()
+    {
+        
+        rb2d.velocity = Vector2.zero;
+    }
 }
