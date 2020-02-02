@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472b5d755ebad1f48856d454bffd759d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
-  HP: 10
+  maxHP: 35
+  HP: 35
   status: 1
   dead: 0
   immortal: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotateSprite: 0
-  speed: 0.5
+  speed: 0.75
 --- !u!114 &1130404045656836759
 MonoBehaviour:
   m_ObjectHideFlags: 0

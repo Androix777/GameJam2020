@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 847289480}
   - component: {fileID: 1145311967731081575}
   - component: {fileID: 7784347553907770413}
+  - component: {fileID: 479234594253554951}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -126,6 +127,20 @@ MonoBehaviour:
     type: 3}
   particLoss: {fileID: 6192015494579577921, guid: 3f720765af18bd440aa4811125adfe2d,
     type: 3}
+--- !u!114 &479234594253554951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358619380626622908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629ce10f0e55c214bb7fe1dbcd509eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 7.5
+  energy: 10
 --- !u!1001 &72675768020125457
 PrefabInstance:
   m_ObjectHideFlags: 0

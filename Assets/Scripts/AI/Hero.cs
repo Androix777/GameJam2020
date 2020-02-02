@@ -68,6 +68,7 @@ public class Hero : MonoBehaviour
                 }
                 else
                 {
+                    
                     particleHeal.gameObject.SetActive(false);
                     action = Action.Move;
                     Position = hit.point;

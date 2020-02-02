@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472b5d755ebad1f48856d454bffd759d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
-  HP: 50
+  maxHP: 75
+  HP: 75
   status: 1
   dead: 0
   immortal: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   forwardOffset: 0.5
   xOffset: 0
   yOffset: 0.12
-  angleOffset: 90
+  angleOffset: 0
   autoShooting: 0
   damagePerShoot: 0
   projectile: {fileID: 7185449160028803178}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotateSprite: 0
-  speed: 0.4
+  speed: 0.6
 --- !u!114 &1825354129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  rangeVert: 3
+  rangeVert: 0.3
 --- !u!114 &7269624223865419304
 MonoBehaviour:
   m_ObjectHideFlags: 0
