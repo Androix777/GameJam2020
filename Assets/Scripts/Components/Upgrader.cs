@@ -30,6 +30,6 @@ public class Upgrader : MonoBehaviour
 
     public void RemoveUpgrade() 
     {
-        Destroy(upgrades.Pop());
+        if (upgrades.Count > 0) Destroy(upgrades.Pop());
     }
 }
