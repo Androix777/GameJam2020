@@ -4,9 +4,5 @@ using UnityEngine;
 
 interface IUpgrade
 {
-    Sprite icon
-    {
-        get;
-        set;
-    }
+    Sprite GetIcon();
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UpgradeReflect : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i6.npg") as Sprite;
 
     public int reflectChance = 50;
     // Start is called before the first frame update
@@ -17,5 +16,10 @@ public class UpgradeReflect : MonoBehaviour, IUpgrade
     void Update()
     {
         
+    }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
     }
 }

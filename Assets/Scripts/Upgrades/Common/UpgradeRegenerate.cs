@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeRegenerate : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i7.npg") as Sprite;
+
     public int regenAmount = 1;
     public float regenRate = 0.5f;
     public float lastRegenTime = 0f;
@@ -24,4 +24,11 @@ public class UpgradeRegenerate : MonoBehaviour, IUpgrade
             gameObject.GetComponent<Life>().HP += regenAmount;
         }
     }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
+    }
+
+
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class UpgradeNumOfGuns : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i1.npg") as Sprite;
 
     Shooter shooter;
 
@@ -28,5 +27,10 @@ public class UpgradeNumOfGuns : MonoBehaviour, IUpgrade
     void OnDestroy()
     {
         shooter.numOfGuns -= 1;
+    }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
     }
 }

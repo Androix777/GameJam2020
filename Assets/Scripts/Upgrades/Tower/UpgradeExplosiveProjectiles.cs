@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class UpgradeExplosiveProjectiles : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i4.npg") as Sprite;
 
     Shooter shooter, shooter2;
     ShootOnDeath shootOnDeath;
@@ -35,5 +34,10 @@ public class UpgradeExplosiveProjectiles : MonoBehaviour, IUpgrade
     void OnDestroy()
     {
         
+    }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
     }
 }

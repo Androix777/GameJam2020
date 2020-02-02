@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class UpgradeDamage : MonoBehaviour, IUpgrade
 {
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i3.npg") as Sprite;
 
     public int damageBonus = 5;
 
@@ -25,5 +22,10 @@ public class UpgradeDamage : MonoBehaviour, IUpgrade
     void OnDestroy()
     {
         gameObject.GetComponent<Shooter>().projectile.GetComponent<DamageDealer>().damage -= damageBonus;
+    }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
     }
 }

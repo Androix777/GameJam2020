@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UpgradeSelfDamage : MonoBehaviour, IUpgrade
 {
-    [SerializeField]
-    public Sprite icon { get; set; } = Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
 
     public int damageAmount = 5;
     // Start is called before the first frame update
@@ -26,5 +24,10 @@ public class UpgradeSelfDamage : MonoBehaviour, IUpgrade
     void OnDestroy()
     {
         gameObject.GetComponent<Shooter>().damagePerShoot -= damageAmount;
+    }
+
+    public Sprite GetIcon()
+    {
+        return Resources.Load<Sprite>("icons/" + "i8.npg") as Sprite;
     }
 }
